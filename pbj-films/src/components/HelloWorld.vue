@@ -75,7 +75,7 @@ const loadMovies = async () => {
   let { data, error
   } = await supabase
     .from('pbj-movies')
-    .select('*')
+    .select('*').order('date_watched', {ascending: false})
 
   console.log('data: ', data)
   if (data) movies.value = data
