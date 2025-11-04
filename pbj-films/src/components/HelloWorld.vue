@@ -206,13 +206,6 @@
 
           // Check if using movies (JSONB) or movie_ids (array)
           if (actorData.movies === undefined) {
-            // Using array of movie IDs format
-            if (!actorData.movie_ids.includes(movieId)) {
-              actorData.movie_ids.push(movieId)
-            }
-
-            actorData.appearances = actorData.movie_ids.length
-          } else {
             // Using JSONB movies format
             const movieExists = actorData.movies.some(m => m.id === movieId)
 
